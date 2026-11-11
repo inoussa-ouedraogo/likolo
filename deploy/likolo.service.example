@@ -1,0 +1,18 @@
+# Alternative à Docker, si Node.js 24 est installé sur le VPS.
+# Adapter l'utilisateur, le chemin ET le chemin du binaire node.
+[Unit]
+Description=Likolo
+After=network.target
+
+[Service]
+Type=simple
+User=likolo
+WorkingDirectory=/opt/likolo
+EnvironmentFile=/opt/likolo/.env
+ExecStart=/usr/bin/node /opt/likolo/server/ovh.mjs
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,5 @@
+export const AVATAR_OPTIONS={skin:['#69412f','#815039','#563425','#966044','#38251e'],shirt:['#37765a','#df844a','#467cb2','#8758a5','#d8bd57','#e7dfce'],shorts:['#344c47','#24334b','#634e6c','#a95b3e'],shoes:['#fbefd1','#272e3a','#df844a','#5cc8c4'],build:['Fin','Athlétique','Large']};
+export const AVATAR_PRESETS=[{name:'Kito',hair:0,skin:0,shirt:0,shorts:0,shoes:0},{name:'Zola',hair:1,skin:2,shirt:3,shorts:2,shoes:0},{name:'Sami',hair:2,skin:1,shirt:1,shorts:1,shoes:3}];
+export function cleanAvatar(value={}){const a={};for(const key of ['hair',...Object.keys(AVATAR_OPTIONS)]){const max=key==='hair'?4:AVATAR_OPTIONS[key].length;a[key]=Number.isInteger(value?.[key])&&value[key]>=0&&value[key]<max?value[key]:(key==='build'?1:0);}return a;}
+
+export function npcAvatar(index=0,players=[]){const base=cleanAvatar(players.find(Boolean));return cleanAvatar({hair:(base.hair+1+index)%4,skin:(base.skin+2+index)%AVATAR_OPTIONS.skin.length,shirt:(base.shirt+1+index)%AVATAR_OPTIONS.shirt.length,shorts:(base.shorts+1+index)%AVATAR_OPTIONS.shorts.length,shoes:(base.shoes+1+index)%AVATAR_OPTIONS.shoes.length,build:(base.build+1+index)%3});}

@@ -1,0 +1,17 @@
+node_modules/
+.wrangler/
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+.DS_Store
+npm-debug.log*
+data/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+.test-ovh-*/
+
+# Serveur généré par npm run build
+dist/server/index.js

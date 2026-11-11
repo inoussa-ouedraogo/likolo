@@ -1,0 +1,25 @@
+{
+  "name": "likolo",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "description": "Prototype 3D du Likolo pour t\u00e9l\u00e9phone et ordinateur",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "vendor": "node scripts/vendor.mjs",
+    "db:generate": "drizzle-kit generate",
+    "build": "node scripts/build-worker.mjs",
+    "dev": "npm run build && node --env-file-if-exists=.env server/ovh.mjs",
+    "start": "node --env-file-if-exists=.env server/ovh.mjs"
+  },
+  "dependencies": {
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "drizzle-kit": "0.31.4",
+    "drizzle-orm": "0.44.5"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

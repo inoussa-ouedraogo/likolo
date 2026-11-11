@@ -1,0 +1,6 @@
+# Exemple pour un Caddy DÉJÀ installé sur le VPS, hors Docker.
+# Remplacer par le domaine choisi. Fusionner avec la configuration existante.
+ton-domaine.fr {
+    encode zstd gzip
+    reverse_proxy 127.0.0.1:3000
+}

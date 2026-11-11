@@ -1,0 +1,9 @@
+.git
+node_modules
+.wrangler
+data
+.env
+.env.*
+.dev.vars*
+*.sqlite*
+.test-ovh-*
